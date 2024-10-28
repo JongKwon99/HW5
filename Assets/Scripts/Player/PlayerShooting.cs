@@ -10,23 +10,6 @@ public class PlayerShooting : MonoBehaviour
     public GameObject specialBullet;
     public GameObject shootPoint;
 
-    void Update()
-    {
-/*        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Instantiate(normalBullet, transform.position, transform.rotation);
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            if (specialBulletNum > 0)
-            {
-                Instantiate(specialBullet, transform.position, transform.rotation);
-                specialBulletNum--;
-            }
-
-        }*/
-    }
-
     public void OnNormalShoot(InputValue value)
     {
         if (value.isPressed)

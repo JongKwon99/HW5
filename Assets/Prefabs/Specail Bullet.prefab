@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 9131462754051023556}
   - component: {fileID: 9083010936375814765}
   - component: {fileID: 1504422376740545972}
-  - component: {fileID: -5778937502211422618}
   - component: {fileID: 162508138592828930}
   - component: {fileID: 8342849791668826024}
+  - component: {fileID: -7346445178766734805}
   m_Layer: 8
   m_Name: Specail Bullet
   m_TagString: Untagged
@@ -110,19 +110,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-5778937502211422618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6306302250206674754}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9859589853f3394479e70fd3b83958cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 15
 --- !u!114 &162508138592828930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,3 +136,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+--- !u!114 &-7346445178766734805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6306302250206674754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de34bfa515bd4484e87a8152858bb50c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
