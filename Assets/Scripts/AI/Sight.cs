@@ -8,14 +8,14 @@ public class Sight : MonoBehaviour
     public float angle;
     public LayerMask objectsLayers;
     public LayerMask obstaclesLayers;
-    public Collider detectedObject;
+    public Collider currentDetecting;
 
     void Update()
     {
         Collider[] colliders = Physics.OverlapSphere(
             transform.position, distance, objectsLayers);
 
-        detectedObject = null;
+        currentDetecting = null;
         for (int i = 0; i < colliders.Length; i++)
         {
             Collider collider = colliders[i];
@@ -31,7 +31,7 @@ public class Sight : MonoBehaviour
                 if (!Physics.Linecast(transform.position,
                     collider.bounds.center, obstaclesLayers) )
                 {
-                    detectedObject = collider;
+                    currentDetecting = collider;
                     break;
                 }
             }

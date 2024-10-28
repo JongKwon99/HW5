@@ -4602,11 +4602,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2279260739035494919, guid: f27a631d669d9734aa571935800bf5f3,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 80
-      objectReference: {fileID: 0}
     - target: {fileID: 3852664839037046434, guid: f27a631d669d9734aa571935800bf5f3,
         type: 3}
       propertyPath: m_Name
@@ -4615,7 +4610,7 @@ PrefabInstance:
     - target: {fileID: 4484664864005985304, guid: f27a631d669d9734aa571935800bf5f3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: -1.873
       objectReference: {fileID: 0}
     - target: {fileID: 4484664864005985304, guid: f27a631d669d9734aa571935800bf5f3,
         type: 3}
@@ -4625,7 +4620,7 @@ PrefabInstance:
     - target: {fileID: 4484664864005985304, guid: f27a631d669d9734aa571935800bf5f3,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -25.42
+      value: -21.279
       objectReference: {fileID: 0}
     - target: {fileID: 4484664864005985304, guid: f27a631d669d9734aa571935800bf5f3,
         type: 3}
@@ -7117,7 +7112,7 @@ PrefabInstance:
     - target: {fileID: 2522494469240397964, guid: 0ae9b066d6ceb6745a4cad752c8ae691,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.841
+      value: -5.481
       objectReference: {fileID: 0}
     - target: {fileID: 2522494469240397964, guid: 0ae9b066d6ceb6745a4cad752c8ae691,
         type: 3}
@@ -7127,7 +7122,7 @@ PrefabInstance:
     - target: {fileID: 2522494469240397964, guid: 0ae9b066d6ceb6745a4cad752c8ae691,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.466
+      value: -29.533
       objectReference: {fileID: 0}
     - target: {fileID: 2522494469240397964, guid: 0ae9b066d6ceb6745a4cad752c8ae691,
         type: 3}
@@ -7168,6 +7163,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351785501398249479, guid: 0ae9b066d6ceb6745a4cad752c8ae691,
+        type: 3}
+      propertyPath: obstaclesLayers.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
