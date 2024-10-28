@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ContactDamager : MonoBehaviour
 {
-    public float damage;
+    public int damage;
 
     private void OnTriggerEnter(Collider other)
     {

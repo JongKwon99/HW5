@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Life : MonoBehaviour
 {
-    public float amount;
+    public int amount;
 
     private void Update()
     {
         if (amount <= 0)
         {
-            if (gameObject.layer == LayerMask.NameToLayer("Player"))
-                GameManager.Instance.CheckLife(this);
-
             Destroy(gameObject);
         }
     }

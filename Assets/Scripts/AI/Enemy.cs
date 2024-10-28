@@ -11,6 +11,6 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameManager.Instance.EnemyDestroyed();
+        
     }
 }

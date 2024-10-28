@@ -7,7 +7,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
-    private int enemiesDestroyed = 0;   
+    public GameObject player;
+
+    public int enemiesCount;
+    public int playerLife;
 
     void Awake()
     {
@@ -18,21 +21,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EnemyDestroyed()
+    private void Start()
     {
-        enemiesDestroyed++;
-        if (enemiesDestroyed >= 10)     // 10마리의 적을 파괴하면 승리
-        {
-            Win();
-        }
-    }
-
-    public void CheckLife(Life playerLife)
-    {
-        if (playerLife.amount <= 0)     // 체력이 0 이하가 되면 패배
-        {
-            Lose();
-        }
+        playerLife = player.GetComponent<Life>().amount;
     }
 
     private void Win()
