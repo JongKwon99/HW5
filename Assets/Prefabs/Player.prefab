@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 8174440541900209633}
   - component: {fileID: 2502962066776834087}
   - component: {fileID: 6103533089765256112}
+  - component: {fileID: -2733742793144552187}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -330,6 +331,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 10
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6103533089765256112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +348,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 6306302250206674754, guid: 47049c8454a12c24191f283ae09f153a, type: 3}
   shootPoint: {fileID: 8895208661586022646}
+--- !u!114 &-2733742793144552187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3852664839037046434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c74b886462b9b244ba1d1ce0e93cf43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 2221106122914261733, guid: 1f3696a9096912e46b9b72866601b473,
+    type: 3}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4069949303617135822
 GameObject:
   m_ObjectHideFlags: 0

@@ -212,7 +212,7 @@ MonoBehaviour:
   obstaclesLayers:
     serializedVersion: 2
     m_Bits: 1
-  detectedObject: {fileID: 0}
+  currentDetecting: {fileID: 0}
 --- !u!1 &2192245726308285186
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,6 +323,7 @@ MonoBehaviour:
   normalBullet: {fileID: 8840007871645934033, guid: 47360ee857c07ab4f80c53208e08f5ac,
     type: 3}
   shootPoint: {fileID: 2495554955907208880}
+  ai: {fileID: 1607168360080360996}
 --- !u!1 &2777029489881084441
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +401,7 @@ GameObject:
   - component: {fileID: -5186107332189428415}
   - component: {fileID: 8798244484136932693}
   - component: {fileID: 869273131812368311}
+  - component: {fileID: 2384876981034940051}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -490,6 +492,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 5
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &869273131812368311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -503,6 +508,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+--- !u!114 &2384876981034940051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2903242820024695350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c74b886462b9b244ba1d1ce0e93cf43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particlePrefab: {fileID: 2221106122914261733, guid: 1f3696a9096912e46b9b72866601b473,
+    type: 3}
+  onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3623895244205561322
 GameObject:
   m_ObjectHideFlags: 0

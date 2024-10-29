@@ -6,9 +6,18 @@ public class EnemyShooting : MonoBehaviour
 {
     public GameObject normalBullet;
     public GameObject shootPoint;
+    public GameObject ai;
 
     private void Start()
     {
-        Instantiate(normalBullet, transform.position, transform.rotation);
+
+    }
+
+    private void Update()
+    {
+        if (ai.GetComponent<Sight>().currentDetecting != null )
+        {
+            Instantiate(normalBullet, transform.position, transform.rotation);
+        }
     }
 }

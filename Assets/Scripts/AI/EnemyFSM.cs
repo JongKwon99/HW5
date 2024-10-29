@@ -4,26 +4,45 @@ using UnityEngine;
 
 public class EnemyFSM : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject playerBase;
+    public GameObject enemyBase;
+
+    public EnemyState currentState;
+
     public enum EnemyState
     {
-        GoToBase,
-        AttackBase,
+        GoToEnemyBase,
+        AttackPlayerBase,
         ChasePlayer,
         AttackPlayer
     }
 
-    public EnemyState currentState;
-
     private void Update()
     {
-        if (currentState == EnemyState.GoToBase) { GoToBase(); }
-        else if (currentState == EnemyState.AttackBase) { AttackBase(); }
+        if (currentState == EnemyState.GoToEnemyBase) { GoToEnemyBase(); }
+        else if (currentState == EnemyState.AttackPlayerBase) { AttackPlayerBase(); }
         else if (currentState == EnemyState.ChasePlayer) { ChasePlayer(); }
         else { AttackPlayer(); }
     }
 
-    void GoToBase() { print("GoToBase"); }
-    void AttackBase() { print("AttackBase"); }
-    void ChasePlayer() { print("ChasePlayer"); }
-    void AttackPlayer() { print("AttackPlayer"); }
+    void GoToEnemyBase()
+    {
+
+    }
+
+    void AttackPlayerBase()
+    {
+
+    }
+
+    void ChasePlayer()
+    {
+
+    }
+
+    void AttackPlayer()
+    {
+
+    }
 }
