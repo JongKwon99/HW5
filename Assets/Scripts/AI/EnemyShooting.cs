@@ -15,7 +15,7 @@ public class EnemyShooting : MonoBehaviour
 
     private void Update()
     {
-        if (ai.GetComponent<Sight>().currentDetecting != null )
+        if (ai.GetComponent<Sight>().currentDetecting != null)
         {
             Instantiate(normalBullet, transform.position, transform.rotation);
         }

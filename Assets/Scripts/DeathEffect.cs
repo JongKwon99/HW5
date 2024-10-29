@@ -6,15 +6,15 @@ using UnityEngine.Events;
 public class DeathEffect : MonoBehaviour
 {
     public GameObject particlePrefab;
-    public UnityEvent onDeath;
+    //public UnityEvent onDeath;
 
-    void Awake()
+    void Start()
     {
         Life life = GetComponent<Life>();
-        life.onDeath.AddListener(OnDeath);
+        life.onDeath.AddListener(explode);
     }
 
-    void OnDeath()
+    void explode()
     {
         Instantiate(particlePrefab, transform.position, transform.rotation);
     }

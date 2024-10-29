@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -8,9 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameObject player;
-
-    public int enemiesCount;
-    public int playerLife;
+    public Life playerLife;
 
     void Awake()
     {
@@ -23,18 +23,23 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        playerLife = player.GetComponent<Life>().amount;
+        
+    }
+
+    private void Update()
+    {
+        if (playerLife.amount <= 0)
+            Lose();
     }
 
     private void Win()
     {
-        Debug.Log("You Win!");
         SceneManager.LoadScene("Win");
     }
 
     private void Lose()
     {
-        Debug.Log("You Lose!");
+        print("nooo!!");
         SceneManager.LoadScene("Lose");
     }
 }
