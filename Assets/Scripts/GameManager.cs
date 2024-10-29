@@ -10,7 +10,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public GameObject player;
-    public Life playerLife;
+    public GameObject enemy;
+    public GameObject playerBase;
+
+    Life playerLife;
+    Life enemyLife;
 
     void Awake()
     {
@@ -23,22 +27,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+        playerLife = player.GetComponent<Life>();
+        enemyLife = player.GetComponent<Life>();
     }
 
     private void Update()
     {
-        
-    }
-
-    private void Win()
-    {
-        SceneManager.LoadScene("Win");
-    }
-
-    private void Lose()
-    {
-        print("nooo!!");
-        SceneManager.LoadScene("Lose");
+        if (playerLife.amount <= 0)
+            SceneManager.LoadScene("Lose");
+        else if (enemyLife.amount <= 0)
+            SceneManager.LoadScene("Win");
     }
 }

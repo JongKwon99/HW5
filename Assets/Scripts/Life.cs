@@ -13,7 +13,7 @@ public class Life : MonoBehaviour
         if (amount <= 0)
         {
             onDeath.Invoke();
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

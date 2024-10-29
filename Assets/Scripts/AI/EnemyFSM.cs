@@ -11,9 +11,8 @@ public class EnemyFSM : MonoBehaviour
 
     public EnemyState currentState;
     public Sight sight;
-    public EnemyShooting shooting; // 총 발사 컴포넌트
-    private float chaseDistance = 10f; // 추적 시작 거리
-    private float attackDistance = 5f; // 공격 시작 거리
+    public EnemyShooting shooting;
+    public int patient = 4;
 
     public enum EnemyState
     {
@@ -71,20 +70,36 @@ public class EnemyFSM : MonoBehaviour
 
     void AttackPlayerBase()
     {
-        
+        MoveTowards(playerBase.transform.position);
     }
 
     void ChasePlayer()
     {
-        MoveTowards(player.transform.position);
+        if (patient <= 0)
+            currentState = EnemyState.AttackPlayerBase;
 
+        if (player != null)
+            MoveTowards(player.transform.position);
+
+        if (player != null && Vector3.Distance(player.transform.position, transform.position) < 4f)
+            currentState = EnemyState.AttackPlayer;
+        
         if (sight.currentDetecting == null)
+        {
             currentState = EnemyState.GoToEnemyBase;
+            patient--;  // 인내심 감소
+        }  
+            
     }
 
     void AttackPlayer()
     {
+        if (player != null)
+            MoveTowards(player.transform.position);
+        shooting.Shoot();
 
+        if (player != null && Vector3.Distance(player.transform.position, transform.position) > 10f)
+            currentState = EnemyState.GoToEnemyBase;
     }
 
     void MoveTowards(Vector3 targetPosition)
