@@ -49,21 +49,24 @@ public class EnemyFSM : MonoBehaviour
 
     void GoToEnemyBase()
     {
+        if (sight.currentDetecting != null)
+            currentState = EnemyState.ChasePlayer;
+
         Vector3 targetPosition = enemyBase.transform.position + new Vector3(0, 0, -5);
         MoveTowards(targetPosition);
 
         // 도착 감지: 현재 위치와 목표 위치 간의 거리 계산
         if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
         {
-            // 월드의 -Z 방향을 바라보도록 회전
+            // Y축 기준으로 월드의 -Z 방향을 바라보도록 회전
             Quaternion targetRotation = Quaternion.LookRotation(Vector3.back); // 월드의 -Z 방향
 
             // 부드럽게 회전
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5.0f * Time.deltaTime);
-        }
 
-        if (sight.currentDetecting != null)
-            currentState = EnemyState.ChasePlayer;
+            // 이동을 멈추기 위해, 더 이상 MoveTowards를 호출하지 않도록 설정
+            return; // 이 함수를 종료하여 더 이상 MoveTowards를 호출하지 않도록 함
+        }
     }
 
     void AttackPlayerBase()
