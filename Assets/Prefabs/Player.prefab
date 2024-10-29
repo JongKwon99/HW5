@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f350c6491d78b22438e1ea0ab2dc041b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 600
+  speed: 1200
   rotationSpeed: 10
 --- !u!114 &2502962066776834087
 MonoBehaviour:
@@ -362,9 +362,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particlePrefab: {fileID: 2221106122914261733, guid: 1f3696a9096912e46b9b72866601b473,
     type: 3}
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &4069949303617135822
 GameObject:
   m_ObjectHideFlags: 0

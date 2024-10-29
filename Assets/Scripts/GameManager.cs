@@ -28,8 +28,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (playerLife.amount <= 0)
-            Lose();
+        
     }
 
     private void Win()
