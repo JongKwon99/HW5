@@ -60,11 +60,9 @@ public class EnemyFSM : MonoBehaviour
             // Y축 기준으로 월드의 -Z 방향을 바라보도록 회전
             Quaternion targetRotation = Quaternion.LookRotation(Vector3.back); // 월드의 -Z 방향
 
-            // 부드럽게 회전
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 5.0f * Time.deltaTime);
 
-            // 이동을 멈추기 위해, 더 이상 MoveTowards를 호출하지 않도록 설정
-            return; // 이 함수를 종료하여 더 이상 MoveTowards를 호출하지 않도록 함
+            return;
         }
     }
 

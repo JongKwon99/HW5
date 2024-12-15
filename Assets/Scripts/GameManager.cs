@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -16,15 +14,10 @@ public class GameManager : MonoBehaviour
     Life playerLife;
     Life enemyLife;
 
-    void Awake()
+    private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        Time.timeScale = 1f;
     }
-
     private void Start()
     {
         playerLife = player.GetComponent<Life>();

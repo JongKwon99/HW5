@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +5,8 @@ public class PlayerMovement : MonoBehaviour
 {
     public float speed;
     public float rotationSpeed;
+    public float jumpForce; // 점프의 강도
+    private bool isGrounded;     // 플레이어가 지면에 닿아 있는지 여부
     private Vector2 movementValue;
     private float lookValue;
     private Rigidbody rb;
@@ -29,38 +29,40 @@ public class PlayerMovement : MonoBehaviour
         lookValue = value.Get<Vector2>().x * rotationSpeed;
     }
 
+    public void OnJump(InputValue value)
+    {
+        if (isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false; // 중복 점프 방지
+        }
+    }
+
+
     void Update()
     {
-        /*transform.Translate(
-            movementValue.x * Time.deltaTime,
-            0,
-            movementValue.y * Time.deltaTime);
-
-        transform.Rotate(0, lookValue * Time.deltaTime, 0);*/
-
         rb.AddRelativeForce(
             movementValue.x * Time.deltaTime,
             0,
             movementValue.y * Time.deltaTime);
 
         rb.AddRelativeTorque(0, lookValue * Time.deltaTime, 0);
-
-        //Debug.Log($"Movement Value: {movementValue}, Look Value: {lookValue}");
-        //Debug.Log($"Velocity: {rb.velocity}, Angular Velocity: {rb.angularVelocity}");
     }
 
-    // 작동되는 코드
-    /*    private void FixedUpdate()
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground")) // 지면 태그 확인
         {
-            // 이동 처리
-            Vector3 moveDirection = new Vector3(movementValue.x, 0, movementValue.y).normalized;
-            Vector3 targetPosition = rb.position + transform.TransformDirection(moveDirection) * speed * Time.fixedDeltaTime;
+            isGrounded = true;
+        }
+    }
 
-            rb.MovePosition(targetPosition);
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
 
-            // 회전 처리 (y축 회전만)
-            float rotation = lookValue * rotationSpeed * Time.fixedDeltaTime;
-            Quaternion turnOffset = Quaternion.Euler(0, rotation, 0);
-            rb.MoveRotation(rb.rotation * turnOffset);
-        }*/
 }
