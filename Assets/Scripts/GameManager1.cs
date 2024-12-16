@@ -3,7 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class GameManager1 : MonoBehaviour
 {
     public static GameManager Instance;
 
@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        Time.timeScale = 1f;
+
     }
     private void Start()
     {

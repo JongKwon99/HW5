@@ -51,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Reverse Camera",
-                    "type": "Button",
-                    "id": "041a82ad-2e4e-4044-aa21-d5ac232659d9",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "ac813440-bd28-4dd6-8b7c-b6429c8910e7",
@@ -274,17 +265,6 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "SpecialShoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7a1739fa-2caa-48fe-b123-b99c9cf41dae",
-                    "path": "<Keyboard>/c",
-                    "interactions": "Hold",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Reverse Camera",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
