@@ -7,6 +7,7 @@ public class GameManager1 : MonoBehaviour
 
     public GameObject player;
     public GameObject enemy;
+    public int winToKill = 5;
 
     private int _killStack; // 내부 변수
 
@@ -18,8 +19,8 @@ public class GameManager1 : MonoBehaviour
         {
             _killStack = value;
 
-            // kill_stack이 3 이상이 되면 Win 씬 로드
-            if (_killStack >= 3)
+            // kill_stack 조건에 따른 승리
+            if (_killStack >= winToKill)
             {
                 SceneManager.LoadScene("Win");
             }

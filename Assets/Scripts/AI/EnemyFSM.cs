@@ -11,26 +11,24 @@ public class EnemyFSM : MonoBehaviour
 
     public EnemyState currentState;
     public Sight sight;
-    public EnemyShooting shooting;
-    public int patient = 2;
 
     public enum EnemyState
     {
-        Patrol,
+        AttackPlayerBase,
         ChasePlayer,
     }
 
     private void Start()
     {
-        currentState = EnemyState.Patrol;
+        currentState = EnemyState.AttackPlayerBase;
     }
 
     private void Update()
     {
         switch (currentState)
         {
-            case EnemyState.Patrol:
-                Patrol();
+            case EnemyState.AttackPlayerBase:
+                AttackPlayerBase();
                 break;
             case EnemyState.ChasePlayer:
                 ChasePlayer();
@@ -38,10 +36,14 @@ public class EnemyFSM : MonoBehaviour
         }
     }
 
-    void Patrol()
+    void AttackPlayerBase()
     {
         if (sight.currentDetecting != null)
             currentState = EnemyState.ChasePlayer;
+        else
+        {
+            MoveTowards(playerBase.transform.position);
+        }
     }
 
     void ChasePlayer()
@@ -52,7 +54,7 @@ public class EnemyFSM : MonoBehaviour
             MoveTowards(player.transform.position);
         }  
         else
-            currentState = EnemyState.Patrol;
+            currentState = EnemyState.AttackPlayerBase;
     }
 
     void MoveTowards(Vector3 targetPosition)

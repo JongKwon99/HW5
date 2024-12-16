@@ -5,7 +5,7 @@ using UnityEngine.Playables;
 public class TimelineSetter : MonoBehaviour
 {
     public PlayableDirector playableDirector;
-
+    public GameObject enemies;
     public PlayerInput pi;
 
     void Start()
@@ -24,6 +24,8 @@ public class TimelineSetter : MonoBehaviour
     {
         // TimeScale을 1로 리셋
         Time.timeScale = 1.0f;
+        // 적 활성화
+        enemies.SetActive(true);
         pi.enabled = true;
     }
 

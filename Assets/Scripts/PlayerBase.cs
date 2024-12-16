@@ -5,11 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBase : MonoBehaviour
 {
-    public GameObject player;
+    public int life;
     public GameObject effectPrefab;
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(effectPrefab, transform.position, transform.rotation);
+        if (other != null && other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            life--;
+            if (life <= 0)
+                SceneManager.LoadScene("Lose");
+        }
     }
 }
