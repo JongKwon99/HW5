@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class DeathEffect : MonoBehaviour
 {
@@ -10,7 +7,7 @@ public class DeathEffect : MonoBehaviour
 
     void Start()
     {
-        Life life = GetComponent<Life>();
+        EnemyLife life = GetComponent<EnemyLife>();
         life.onDeath.AddListener(explode);
     }
 
